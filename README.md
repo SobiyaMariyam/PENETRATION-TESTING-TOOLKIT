@@ -135,7 +135,7 @@ Example log output:
 2025-01-22 12:34:56 - WARNING - Failed to connect to port 23
 2025-01-22 12:34:56 - INFO - Results saved to scan_results_192.168.1.1.csv
 ```
-
+![Image](https://github.com/user-attachments/assets/c224e666-162b-4ce2-8e88-5fdda2f5a98c)
 ---
 
 
