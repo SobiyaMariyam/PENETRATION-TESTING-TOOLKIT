@@ -1,0 +1,118 @@
+---
+# Penetration Testing Toolkit
+
+**Efficient and Modular Tool for Network Security Assessment**
+
+## Overview
+The Penetration Testing Toolkit is a Python-based tool designed for network and system security assessments. It consists of two core modules:
+1. **Async Port Scanner**: Efficiently scans open ports and retrieves service banners.
+2. **SSH Brute-Forcer**: Tests SSH password strength using a provided wordlist.
+
+The toolkit supports asynchronous execution for improved performance and includes features like detailed reporting, CSV exports, and a GUI for ease of use.
+
+---
+
+## Features
+
+### General
+- **Modular Design**: Independent modules that work together seamlessly.
+- **Detailed Reporting**: Saves results in CSV format for further analysis.
+- **Cross-Platform**: Works on Windows and Linux systems.
+
+### Async Port Scanner
+- Asynchronous scanning using `asyncio`.
+- Supports scanning single IPs or IP ranges.
+- Detects services using `socket.getservbyport`.
+- Fetches banners from open ports.
+- GUI support for parameter input via `tkinter`.
+
+### SSH Brute-Forcer
+- Asynchronous brute-forcing using `asyncio`.
+- Supports custom password wordlists.
+- Focused on SSH (port 22).
+
+---
+
+## Installation
+
+### Prerequisites
+- Python 3.8 or higher.
+- Required libraries: `asyncio`, `paramiko`, `ipaddress`.
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/penetration-toolkit.git
+   cd penetration-toolkit
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## Usage
+
+Run the toolkit:
+```bash
+python toolkit.py
+```
+
+### Menu Options:
+1. **Async Port Scanner**: Scan open ports and fetch service banners.
+2. **SSH Brute-Forcer**: Test password strength for SSH services.
+3. **Exit**: Exit the toolkit.
+
+#### Example
+- **Async Port Scanner**:
+  - Input target: `192.168.1.1`
+  - Port range: `1-1000`
+  - Timeout: `2 seconds`
+- **SSH Brute-Forcer**:
+  - Input target: `192.168.1.1`
+  - Username: `admin`
+  - Password list: `passwords.txt`
+
+---
+
+## Output Examples
+
+### Port Scanner
+**Terminal Output**:
+```
+Open Ports:
+Port 22 (ssh): OpenSSH 8.2p1 Ubuntu
+Port 80 (http): Apache HTTP Server
+```
+
+**CSV Output** (`scan_results_192.168.1.1.csv`):
+```
+Port,Service,Banner
+22,ssh,OpenSSH 8.2p1 Ubuntu
+80,http,Apache HTTP Server
+```
+
+### SSH Brute-Forcer
+**Terminal Output**:
+```
+[FAILED] Incorrect password: 12345
+[FAILED] Incorrect password: admin123
+[SUCCESS] Password found: letmein
+```
+
+---
+
+## Contribution
+
+Contributions are welcome! Feel free to:
+- Fork the repository.
+- Submit pull requests for new features or bug fixes.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+```
